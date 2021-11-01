@@ -26,7 +26,8 @@ class AddMenuItemIdColumnToFeedbacksTable extends Migration
     public function down()
     {
         Schema::table('feedbacks', function (Blueprint $table) {
-            //
+            $table->dropForeign(['menu_item_id']);
+            $table->dropColumn('menu_item_id');
         });
     }
 }

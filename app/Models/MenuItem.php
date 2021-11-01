@@ -28,4 +28,9 @@ class MenuItem extends Model
     {
         return $this->belongsTo(Restaurant::class, 'restaurant_id');
     }
+
+    public function feedbacks()
+    {
+        return $this->hasMany(FeedBack::class, 'menu_item_id');
+    }
 }
